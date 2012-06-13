@@ -1,0 +1,26 @@
+{
+  "author": "Brian Link <cpsubrian@gmail.com>",
+  "name": "cantina-session",
+  "private": true,
+  "description": "Connect session support for Cantina",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cantina/cantina-session.git"
+  },
+  "main": "./lib",
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "cantina-utils": "git+ssh://git@github.com/cantina/cantina-utils.git",
+    "pkginfo": "~0.2.3",
+    "connect": "~2.3.0"
+  },
+  "devDependencies": {
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "~0.6.0"
+  }
+}
