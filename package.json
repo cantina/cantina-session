@@ -3,7 +3,7 @@
   "name": "cantina-session",
   "private": true,
   "description": "Connect session support for Cantina",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/cantina/cantina-session.git"
