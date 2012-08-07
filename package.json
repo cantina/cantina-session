@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "cantina-utils": "git+ssh://git@github.com/cantina/cantina-utils.git",
-    "pkginfo": "~0.2.3",
     "connect": ">=2.3.0 <2.3.6",
     "connect-redis": "~1.4.0",
     "cookie": "~0.0.4"
