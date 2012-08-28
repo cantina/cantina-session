@@ -8,12 +8,11 @@
     "type": "git",
     "url": "git://github.com/cantina/cantina-session.git"
   },
-  "main": "./lib",
+  "main": "cantina-session.js",
   "scripts": {
     "test": "make test"
   },
   "dependencies": {
-    "cantina-utils": "git+ssh://git@github.com/cantina/cantina-utils.git",
     "connect": ">=2.3.0 <2.3.6",
     "connect-redis": "~1.4.0",
     "cookie": "~0.0.4"
@@ -23,5 +22,14 @@
   "optionalDependencies": {},
   "engines": {
     "node": ">= 0.6.0"
+  },
+  "cantina": {
+    "consumes": ["middleware", "redis"],
+    "provides": ["session"],
+    "config": {
+      "secret": "keyboard cat",
+      "key": "connect.sid",
+      "store": "redis"
+    }
   }
 }
