@@ -25,12 +25,11 @@
   },
   "cantina": {
     "name": "session",
-    "consumes": ["middleware", "redis"],
+    "consumes": ["middler", "redis"],
     "provides": ["session"],
     "config": {
       "secret": "keyboard cat",
-      "key": "connect.sid",
-      "store": "redis"
+      "key": "connect.sid"
     }
   }
 }
