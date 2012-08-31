@@ -22,14 +22,5 @@
   "optionalDependencies": {},
   "engines": {
     "node": ">= 0.6.0"
-  },
-  "cantina": {
-    "name": "session",
-    "consumes": ["middler", "redis"],
-    "provides": ["session"],
-    "config": {
-      "secret": "keyboard cat",
-      "key": "connect.sid"
-    }
   }
 }
