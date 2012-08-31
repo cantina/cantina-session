@@ -5,13 +5,18 @@ var connect = require('connect'),
     parseSignedCookie = require('connect').utils.parseSignedCookie;
 
 exports.name = "session";
+
 exports.dependencies = {
-  "middler": "~1.0.0",
+  "middleware": "~1.0.0",
   "redis": "~1.0.0"
 };
+
 exports.defaults = {
   secret: "keyboard cat",
-  key: "connect.sid"
+  key: "connect.sid",
+  store: {
+    prefix: 'cantina'
+  }
 };
 
 exports.init = function(app, done) {
@@ -19,11 +24,12 @@ exports.init = function(app, done) {
   var session = conf;
 
   // Create session store.
-  session.store = new RedisStore(app.conf.get('redis'));
+  conf.store.client = app.redis;
+  session.store = new RedisStore(conf.store);
 
   // Add middleware.
-  app.middler.add(connect.cookieParser(conf.secret));
-  app.middler.add(connect.session(session));
+  app.middleware.add(connect.cookieParser(conf.secret));
+  app.middleware.add(connect.session(session));
 
   // Expose socket session support.
   session.fromSocket = exports.fromSocket(session);
