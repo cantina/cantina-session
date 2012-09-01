@@ -15,7 +15,7 @@ exports.defaults = {
   secret: "keyboard cat",
   key: "connect.sid",
   store: {
-    prefix: 'cantina'
+    prefix: 'cantina:session:'
   }
 };
 
