@@ -17,8 +17,7 @@
     "connect-redis": "~1.4.0",
     "cookie": "~0.0.4"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
     "node": ">= 0.6.0"
