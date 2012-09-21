@@ -1,18 +1,17 @@
 cantina-session
 ===============
 
-[connect-session](http://www.senchalabs.org/connect/middleware-session.html) plugin for [Cantina](https://github.com/cantina/cantina)
+[connect-session](http://www.senchalabs.org/connect/middleware-session.html)
+plugin for [Cantina](https://github.com/cantina/cantina)
 
 Dependencies
 ------------
-- **middleware** - An middler stack provided by [cantina-middler](https://github.com/cantina/cantina-middler)
-- **redis** - A redis client provided by [cantina-redis](https://github.com/cantina/cantina-redis/tree/1.x)
+- **middleware** - The core middleware plugin.
+- **redis** - A redis client provided by [cantina-redis](https://github.com/cantina/cantina-redis)
 
 Provides
 --------
 - **app.session** - Session configuration and handlers.
-  - **app.session.fromSocket**
-  - **app.session.fromEngineSocket**
 
 Adds Middleware
 ---------------
@@ -28,24 +27,14 @@ Configuration
 **Defaults**
 ```js
 {
-  secret: "keyboard cat",
-  key: "connect.sid",
-  store: {
-    prefix: 'cantina'
+  session: {
+    secret: "keyboard cat",
+    key: "connect.sid",
+    store: {
+      prefix: 'cantina'
+    }
   }
 }
-```
-
-Example
--------
-```js
-var cantina = require('cantina'),
-    plugins = ['http', 'middleware', 'cantina-session'],
-    conf = { http: { port: 3000 } };
-
-cantina.createApp(plugins, conf, function(err, app) {
-  if (err) return console.log(err);
-});
 ```
 
 - - -
