@@ -6,8 +6,8 @@ plugin for [Cantina](https://github.com/cantina/cantina)
 
 Dependencies
 ------------
-- **middleware** - The core middleware plugin.
-- **redis** - A redis client provided by [cantina-redis](https://github.com/cantina/cantina-redis)
+- **app.middleware** - Provided by the core middleware plugin.
+- **app.redis** - A redis client provided by [cantina-redis](https://github.com/cantina/cantina-redis)
 
 Provides
 --------
