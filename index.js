@@ -18,7 +18,7 @@ app.on('init', function(){
   var session = conf;
 
   // Create session store.
-  conf.store.client = app.redis.client;
+  conf.store.client = app.redis;
   session.store = new RedisStore(conf.store);
 
   // Add middleware.
