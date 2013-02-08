@@ -9,9 +9,6 @@
     "url": "git://github.com/cantina/cantina-session.git"
   },
   "main": "index.js",
-  "peerDependencies": {
-    "cantina": "git+ssh://git@github.com:cantina/cantina.git#2.x"
-  },
   "dependencies": {
     "connect": ">=2.3.0 <2.3.6",
     "connect-redis": "~1.4.0"
