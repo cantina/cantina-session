@@ -3,6 +3,9 @@ var app = require('cantina'),
     connect = require('connect'),
     RedisStore = require('connect-redis')(connect);
 
+// we need app.redis
+require('cantina-redis');
+
 app.conf.add({
   session: {
     secret: "keyboard cat",
