@@ -24,6 +24,12 @@ app.on('init', function(){
   conf.store.client = app.redis;
   session.store = new RedisStore(conf.store);
 
+  // connect.session requires this modification to req:
+  app.middleware.first(function (req, res, next) {
+    req.originalUrl = req.originalUrl || req.url;
+    next();
+  });
+
   // Add middleware.
   app.middleware.add(connect.cookieParser(conf.secret));
   app.middleware.add(connect.session(session));

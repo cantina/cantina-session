@@ -10,7 +10,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "connect": ">=2.3.0 <2.3.6",
+    "connect": "carlos8f/connect-1",
     "connect-redis": "~1.4.0"
   },
   "devDependencies": {},
