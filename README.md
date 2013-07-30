@@ -1,37 +1,40 @@
 cantina-session
 ===============
 
-[connect-session](http://www.senchalabs.org/connect/middleware-session.html)
-plugin for [Cantina](https://github.com/cantina/cantina)
+Provides [sess](https://github.com/carlos8f/sess) middleware for [Cantina](https://github.com/cantina/cantina) applications.
 
 Dependencies
 ------------
-- **app.middleware** - Provided by the core middleware plugin.
-- **app.redis** - A redis client provided by [cantina-redis](https://github.com/cantina/cantina-redis)
+- [cantina-web](https://github.com/cantina/cantina-web)
 
 Provides
 --------
-- **app.session** - Session configuration and handlers.
+- **app.sessionHandler** - Session middleware.
+- **app.sessions** - (If cantina-redis is loaded) [Modeler](https://github.com/carlos8f/modeler) collection of sessions.
 
 Adds Middleware
 ---------------
-- **connect.cookieParser**
-- **connect.session**
+- **app.sessionHandler**
 
 Configuration
 -------------
-- **secret** - Sessin secret
-- **key** - Session key
-- **store** - Options for the RedisStore
+- **weight** - Session middleware weight.
+- **redis** - By default, if `app.redis` exists `cantina-session` will use redis
+              for sessions. If you want to force in-memory session even though
+              the app uses redis, set this to `false`.
+- **cookie** - Cookie settings (see `sess` docs)
 
 **Defaults**
+
 ```js
 {
   session: {
-    secret: "keyboard cat",
-    key: "connect.sid",
-    store: {
-      prefix: 'cantina'
+    weight: -300,
+    redis: true,
+    key: "sess",
+    cookie: {
+      httpOnly: true,
+      path: '/'
     }
   }
 }
@@ -45,7 +48,7 @@ strategy firm located in Aptos, CA and Washington, D.C.
 
 - - -
 ### License: MIT
-Copyright (C) 2012 Terra Eclipse, Inc. ([http://www.terraeclipse.com](http://www.terraeclipse.com))
+Copyright (C) 2013 Terra Eclipse, Inc. ([http://www.terraeclipse.com](http://www.terraeclipse.com))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
