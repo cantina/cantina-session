@@ -2,20 +2,23 @@
   "author": "Brian Link <cpsubrian@gmail.com>",
   "name": "cantina-session",
   "private": true,
-  "description": "Connect session support for Cantina",
-  "version": "2.0.1",
+  "description": "Session support for Cantina",
+  "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/cantina/cantina-session.git"
   },
-  "main": "index.js",
+  "main": "cantina-session.js",
   "dependencies": {
-    "connect": "carlos8f/connect-1",
-    "connect-redis": "~1.4.0"
+    "sess": "~0.1.3",
+    "modeler-redis": "~0.3.1"
   },
-  "devDependencies": {},
-  "optionalDependencies": {},
-  "engines": {
-    "node": ">= 0.6.0"
-  }
+  "devDependencies": {
+    "mocha": "~1.12.0",
+    "cantina": "cantina/cantina#3.x",
+    "cantina-redis": "cantina/cantina-redis#3.x",
+    "cantina-web": "cantina/cantina-web#3.x",
+    "request": "~2.25.0"
+  },
+  "optionalDependencies": {}
 }
