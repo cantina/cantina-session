@@ -7,7 +7,7 @@ describe('sessions', function() {
     request = require('request').defaults({jar: true});
     before(createApp);
     before(function (done) {
-      require('../');
+      app.require('../');
       addMiddleware();
       app.start(done);
     });
@@ -19,8 +19,8 @@ describe('sessions', function() {
     request = require('request').defaults({jar: true});
     before(createApp);
     before(function (done) {
-      require('cantina-redis');
-      require('../');
+      app.require('cantina-redis');
+      app.require('../');
       addMiddleware();
       app.start(done);
     });
@@ -37,7 +37,7 @@ describe('sessions', function() {
   });
 
   function createApp (done) {
-    app = require('cantina');
+    app = require('cantina').createApp();
     app.silence();
     app.boot(function (err) {
       assert.ifError(err);
