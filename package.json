@@ -19,14 +19,14 @@
     "modeler-redis": "~0.3.1"
   },
   "peerDependencies": {
-    "cantina": "~4.1.0",
-    "cantina-web": "~4.1.0"
+    "cantina": "^4.1.0",
+    "cantina-web": "^4.1.0"
   },
   "devDependencies": {
     "mocha": "*",
-    "cantina": "~4.1.0",
-    "cantina-redis": "~4.1.0",
-    "cantina-web": "~4.1.0",
+    "cantina": "^4.1.0",
+    "cantina-redis": "^4.1.0",
+    "cantina-web": "^4.1.0",
     "request": "~2.25.0"
   },
   "optionalDependencies": {}
