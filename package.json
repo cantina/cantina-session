@@ -1,7 +1,6 @@
 {
   "author": "Brian Link <cpsubrian@gmail.com>",
   "name": "cantina-session",
-  "private": true,
   "description": "Session support for Cantina",
   "version": "3.0.0",
   "repository": {
